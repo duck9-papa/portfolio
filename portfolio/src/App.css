@@ -1,6 +1,7 @@
 #root {
   width: 100vw;
   text-align: center;
+  --viewport-width-60: 60vw;
   div {
     font-family: NotoSansKR;
     font-size: 14px;

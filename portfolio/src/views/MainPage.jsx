@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ProfileView from "./ProfileView";
 import SkillView from "./SkillView";
+import ExperiencePage from "./ExperiencePage";
 
 const MainWrap = styled.div`
   display: flex;
@@ -12,6 +13,7 @@ const MainPage = () => {
     <MainWrap>
       <ProfileView />
       <SkillView />
+      <ExperiencePage />
     </MainWrap>
   );
 };
