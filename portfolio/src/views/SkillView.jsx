@@ -120,6 +120,8 @@ const SkillView = () => {
   const skils = [
     { category: "FrontEnd", list: ["HTML/CSS", "Javascript", "React", "Vue"] },
     { category: "CI/CD", list: ["Github", "CentOs", "Jenkins"] },
+    { category: "DB", list: ["Firebase"] },
+
     { category: "Comunication", list: ["Figma", "Notion", "Slack"] },
   ];
 

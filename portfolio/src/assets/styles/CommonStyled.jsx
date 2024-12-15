@@ -30,8 +30,9 @@ export const ProfileContainer = styled.div`
   gap: 16px;
   font-weight: 500;
   img {
-    width: 150px;
-    height: 200px;
+    width: 300px;
+    height: 400px;
+    border-radius: 30px;
   }
 `;
 export const GuideRow = styled.div`
@@ -45,7 +46,7 @@ export const ProfileNameTag = styled.span`
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 18px;
   opacity: 0;
   translate: 0 -100%;
   animation-name: ${({ $on }) => $on && displaySpread};
@@ -62,6 +63,8 @@ export const ImgMono = styled.div`
   display: flex;
   overflow: hidden;
 
+  margin: 0;
+  padding: 0;
   img {
     border-radius: 30px;
   }
@@ -82,10 +85,12 @@ export const ImgFilm = styled.div`
 
   transition: 1s;
   ${pcQuery} {
-    translate: -${({ $displayImg }) => $displayImg * 401.6}px 0;
+    translate: -${({ $displayImg, $value }) =>
+        $displayImg * ($value || 401.6)}px 0;
     img {
       width: 400px;
       height: 400px;
+      object-fit: cover; /* 이미지가 요소 크기에 맞게 조정되도록 설정 */
     }
   }
 
@@ -193,7 +198,8 @@ export const PresentContainer = styled.div`
   align-items: center;
   gap: 24px;
   width: 100%;
-  padding: 16px;
+  padding: 32px 16px;
+  padding-top: 0;
   color: #fff;
 `;
 
@@ -208,12 +214,20 @@ export const PresentItem = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 32px;
+  opacity: 0;
+  translate: -50% 0;
   width: 100%;
   max-width: 910px;
   padding: 16px;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  animation-name: ${({ $on }) => $on && displaySpread};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+
   text-align: start;
   color: #000;
 `;
@@ -242,5 +256,102 @@ export const PresentContent = styled.div`
   }
   span {
     padding-left: 16px;
+  }
+`;
+
+export const ProjectsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+  max-width: 1296px;
+  margin-top: 32px;
+`;
+
+export const ProjectItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 16px;
+  padding: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    scale: 1.02;
+  }
+  ${pcQuery} {
+    width: 300px;
+    height: 300px;
+  }
+`;
+
+export const ProjectItemImg = styled.img.attrs({ alt: "title" })`
+  width: 100%;
+  height: 80%;
+  border-radius: 8px;
+`;
+
+export const ProjectDescriptionArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: start;
+  .period {
+    font-size: 12px;
+    color: #d9d9d9;
+  }
+  .title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+  }
+`;
+
+export const ContactContainer = styled.div`
+  display: flex;
+  gap: 24px;
+`;
+
+export const ContactForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+  input,
+  textarea {
+    min-width: 300px;
+    min-height: 30px;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    padding: 0 12px;
+    font-family: NotoSans;
+
+    &[type="submit"] {
+      margin-top: 24px;
+      cursor: pointer;
+      font-weight: 600;
+      &:hover {
+        background-color: #f9f9f9;
+      }
+    }
+  }
+
+  textarea {
+    height: 92px;
+    padding: 8px;
+  }
+`;
+
+export const ContactContent = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  ${mobileQuery} {
+    flex-direction: column;
   }
 `;
