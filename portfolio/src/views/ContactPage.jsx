@@ -14,6 +14,7 @@ import contact2 from "../assets/images/contact2.jpg";
 import contact3 from "../assets/images/contact3.jpg";
 import contact4 from "../assets/images/contact4.jpg";
 import contact5 from "../assets/images/contact5.jpg";
+import toast from "react-hot-toast";
 
 const Wrap = styled(GradientWrap)`
   flex-direction: column;
@@ -52,11 +53,11 @@ const ContactPage = () => {
       )
       .then(
         () => {
-          console.log("SUCCESS!");
+          toast.success("메일 전송에 성공하였습니다!");
           form.current.reset(); // 폼 초기화
         },
         (error) => {
-          console.log("FAILED...", error);
+          toast.error("메일 전송에 실패하였습니다");
         }
       );
   };
