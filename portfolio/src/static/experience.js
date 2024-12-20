@@ -14,7 +14,8 @@ export const presentItems = [
             details: [
               "액션 입력기, 히트맵 입력기 개발",
               "액션 입력 프로세스 특허 등록",
-              "시스템 코드 연동 체계 구축, 요청 처리 병렬화를 통해 성능 향상",
+              "시스템 코드 연동 체계 구축",
+              "요청 처리 병렬화를 통해 성능 향상",
             ],
           },
           {
@@ -44,7 +45,7 @@ export const presentItems = [
           {
             title: "개발 환경 구축 및 CI/CD 구축",
             details: [
-              "NCP,  CentOs 환경에서의 nginx를 사용해 React Project 배포",
+              "NCP, CentOs 환경에서의 nginx를 사용해 React Project 배포",
               "Github와 Jenkins를 활용해 CI/CD 환경 구축",
               "사내 가이드 노션 페이지 작성",
             ],
